@@ -1,0 +1,47 @@
+#In this assignment, you will be playing the role of a worker who tracks shipments, and needs to check on what else needs to be done.
+#Test the program on: https://repl.it/@Clockknight/EnviousStaidSandpiper
+
+#prompt user to enter an integer to be checked later.
+puts "Welcome to MegaCorp Terminal! \n\n To begin your work day, input how many boxes of Formula-337 are prepared, in Liters, rounded down. The target amount today is [20] to [30] Liters." 
+formula337 = gets.to_i
+
+#If it is inside of the range, make a note. Otherwise, move on.
+puts "You have input " + formula337.to_s + " Liters of Formula-337.\n\n"
+if (20..30)===formula337
+  formula337td = 0
+else
+  formula337td = 1
+end 
+
+
+#Repeat similar process with different material.
+puts "Next: How many Kilograms of Avacados are in stock, rounded down? The target amount today is [150] to [200] Kilograms."
+avac = gets.to_i
+
+puts "You have input " + avac.to_s + " Kilograms of Avacados.\n\n"
+if (150...200)===avac
+  avactd = 0
+else
+  avactd = 1
+end 
+
+#Print a to do list, based on the user's previous answers.
+#If either avactd or formula337td are non zeros, the list will begin.
+if 0 != avactd+formula337td 
+  puts "Please remember to:\n"
+end 
+#Print to dos for anything the user needs to do.
+if 1 == formula337td 
+  puts "=--Order more Formula-337.\n"
+end 
+if 1 == avactd
+  puts "=--Order more Avacados."
+end 
+
+#If neither of the to dos are unfinished, instead thank the user.
+if 0 == formula337td  && 0 == avactd 
+  puts "Thank you for your hard work." 
+end
+
+#Regardless, print this message at the end.
+puts "\n\nHave a productive day."
